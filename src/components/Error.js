@@ -4,7 +4,7 @@ class Error extends Component {
     render() {
         return (
             <div>
-                Error
+                <h2>Error! This Page Does Not Exist!</h2>
             </div>
         )
     }
