@@ -8,6 +8,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Index from './components/Index';
 import ErrorPage from './components/Error';
+import Form from './components/Form';
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     this.props.getServices()
   }
-  
+
   render() {
     if (this.props.loading) {
       return (
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path="/" component={ Home } />
           <Route exact path="/about" component={ About } />
           <Route exact path="/services" component={ Index } />
+          <Route exact path="/services/new" component={ Form } />
           <Route component={ ErrorPage } />
         </Switch>
         <Footer />
