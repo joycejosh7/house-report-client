@@ -16,6 +16,11 @@ const servicesReducer = (state= initialState, action) => {
                 loading: false,
                 services: action.services
             }
+        case "ADD_SERVICE":
+            return {
+                ...state,
+                services: [...state.services, action.service]
+            }
         default:
             return state
     }
