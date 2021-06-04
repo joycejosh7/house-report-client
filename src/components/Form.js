@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addService } from '../actions'; 
 
 class Form extends Component {
+
     state = {
         title: "",
         contractor: "",
@@ -23,8 +24,14 @@ class Form extends Component {
     }
 
     render() {
+
+        const formStyle = {
+            fontFamily:"arial",
+            margin: "25px"
+        }
+
         return (
-            <div>
+            <div style={formStyle}>
                 <h2>Add Service</h2>
                 <form onSubmit={ this.handleSubmit }>
                     <div>
