@@ -4,7 +4,9 @@ import Service from './Service';
 
 class Index extends Component {
     render() {
-        const services = this.props.services.map( (service, i) => <Service key={i} title={service.title} contractor={service.contractor} company={service.company} description={service.description} date={service.date}/>)
+        const services = this.props.services.map( (service, i) => <Service key={i} service={service}/>)
+
+        // const services = this.props.services.map( (service, i) => <Service key={i} title={service.title} contractor={service.contractor} company={service.company} description={service.description} date={service.date}/>)
 
         const indexStyle = {
             textAlign: "center",

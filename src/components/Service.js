@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 class Service extends Component {
     render() {
-        const { title, contractor, company, description, date } = this.props
+        const { title, contractor, company, description, date } = this.props.service
 
         // const handleDelete = () => {
         //     debugger
