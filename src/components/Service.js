@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-// import { deleteService } from '../actions'
+import { connect } from 'react-redux'
+import { deleteService } from '../actions/index'
 
 class Service extends Component {
     render() {
         const { title, contractor, company, description, date } = this.props.service
 
-        // const handleDelete = () => {
-        //     debugger
-        //     this.props.deleteService(this.props.service.id)
-        //     this.props.history.push("/services")
-        //   }
+        const handleDelete = () => {
+            this.props.deleteService(this.props.service.id)
+            // this.props.history.push("/services")
+          }
 
         const serviceStyle = {
             backgroundColor:"grey",
@@ -23,10 +23,17 @@ class Service extends Component {
                 <p>From: {company}</p>
                 <p>Services Rendered: {description}</p>
                 <p>{date}</p>
-                {/* <button onClick={handleDelete}>Delete</button> */}
+                <button onClick={handleDelete}>Delete</button>
             </div>
         )
     }
 }
 
-export default Service
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deleteService: (id) => {dispatch(deleteService(id))}
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Service)
+// export default Service

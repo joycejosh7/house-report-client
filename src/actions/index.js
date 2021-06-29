@@ -24,3 +24,21 @@ export const addService = (service, history) => {
         })
     }
   }
+
+export const deleteService = (id) => {
+  return dispatch => {
+    fetch(`http://localhost:3001/services/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ id })
+    })
+      .then(resp => resp.json())
+      .then(service => {
+        console.log(service)
+        dispatch({ type: "DELETE_SERVICE", service })
+      })
+  }
+}
